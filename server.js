@@ -21,8 +21,22 @@ var articles = {
                         This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.This is the content of article one.
                     </p>`
     },
-    articleTwo: {},
-    articleThree: {}
+    articleTwo: {
+        title : 'Article Two|Swathi Nagarajan',
+        heading: 'Article Two',
+        date : '25-Oct-2016',
+        content : `<p>
+                        This is the content of article two.
+                   </p>`
+    },
+    articleThree: {
+        title : 'Article Three|Swathi Nagarajan',
+        heading: 'Article Three',
+        date : '25-Oct-2016',
+        content : `<p>
+                        This is the content of article three.
+                   </p>`
+    }
 };
     
 
