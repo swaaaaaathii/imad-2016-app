@@ -4,6 +4,12 @@ var element=document.getElementById('main-text');
 element.innerHTML = 'new text';
 
 var image=document.getElementById('img');
+var marginleft=0;
+function moveRight()
+{
+    marginleft=marginleft+1;
+    image.style.marginLeft = marginleft+'px';
+}
 image.onclick = function () { 
-    image.style.marginLeft = '100px';
+    var interval = setInterval(moveRight,50);
 };
