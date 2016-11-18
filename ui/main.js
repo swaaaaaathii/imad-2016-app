@@ -4,7 +4,7 @@ console.log('Loaded!');
 element.innerHTML = 'new text';*/
 
 var image=document.getElementById('img');
-var marginleft=0;
+var marginRight=0;
 function moveLeft()
 {
     marginright=marginright+1;
