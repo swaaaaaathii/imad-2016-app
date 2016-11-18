@@ -5,11 +5,11 @@ element.innerHTML = 'new text';*/
 
 var image=document.getElementById('img');
 var marginleft=0;
-function moveRight()
+function moveLeft()
 {
-    marginleft=marginleft+1;
-    image.style.marginLeft = marginleft+'px';
+    marginright=marginright+1;
+    image.style.marginRight = marginRight+'px';
 }
 image.onclick = function () { 
-    var interval = setInterval(moveRight,50);
+    var interval = setInterval(moveLeft,50);
 };
