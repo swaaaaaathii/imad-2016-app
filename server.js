@@ -6,6 +6,7 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 
 
 var articles = {
