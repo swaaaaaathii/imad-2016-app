@@ -92,6 +92,10 @@ app.get('/hash/:input',function(req,res){
     res.send(hashedString);
 });
 
+app.get('/create-user',function(req,res){
+    
+});
+
 app.get('/:articleName',function (req,res){
    var articleName = req.params.articleName;
    res.send(createTemplate(articles[articleName])); 
