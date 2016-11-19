@@ -82,7 +82,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/hash/:input',function(req,res){
-    
+    var hashedString = hash(req.params.input,'teddy-boo');
+    res.send(hashedString);
 });
 
 app.get('/:articleName',function (req,res){
