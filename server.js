@@ -77,7 +77,6 @@ function createTemplate (data) {
     return htmlTemplate;
 }
 
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -93,7 +92,8 @@ app.get('/hash/:input',function(req,res){
 });
 
 app.get('/create-user',function(req,res){
-    
+    var salt = crypto.getRandomByte(128).toString('hex');
+    var dbstring = hash(password, salt);
 });
 
 app.get('/:articleName',function (req,res){
