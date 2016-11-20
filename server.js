@@ -4,6 +4,16 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+
+var config = {
+    user : 'swaaaaaathii',
+    database : 'swaaaaaathii',
+    host : 'db.imad.hasura-app.io',
+    port : '5432',
+    password : process.env.DB_PASSWORD
+};
+
+
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
