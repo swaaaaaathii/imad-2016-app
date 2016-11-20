@@ -9,7 +9,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 
-var articles = {
+/*var articles = {
     'article-one': {
         title : 'Article One|Swathi Nagarajan',
         heading: 'Article One',
@@ -77,7 +77,7 @@ function createTemplate (data) {
     </html>
     `;
     return htmlTemplate;
-}
+}*/
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -107,11 +107,11 @@ app.post('/create-user',function(req,res){
     });
 });
 
-app.get('/:articleName',function (req,res){
+/*app.get('/:articleName',function (req,res){
    var articleName = req.params.articleName;
    res.send(createTemplate(articles[articleName])); 
 });
-
+*/
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
