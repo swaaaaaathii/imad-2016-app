@@ -140,6 +140,8 @@ app.post('/login',function(req,res){
     });
 });
 
+var pool = new Pool(config);
+
 /*app.get('/:articleName',function (req,res){
    var articleName = req.params.articleName;
    res.send(createTemplate(articles[articleName])); 
