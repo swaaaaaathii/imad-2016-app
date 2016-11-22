@@ -2,15 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-//var crypto = require('crypto');
+var crypto = require('crypto');
 var bodyParser = require('body-parser');
-
-var crypto;
-try {
-  crypto = require('crypto');
-} catch (err) {
-  console.log('crypto support is disabled!');
-}
 
 var config = {
     user : 'swaaaaaathii',
