@@ -2,8 +2,15 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-var crypto = require('crypto');
+//var crypto = require('crypto');
 var bodyParser = require('body-parser');
+
+var crypto;
+try {
+  crypto = require('crypto');
+} catch (err) {
+  console.log('crypto support is disabled!');
+}
 
 var config = {
     user : 'swaaaaaathii',
@@ -108,7 +115,6 @@ var pool = new Pool(config);
 app.post('/create-user',function(req,res){
     var username = req.body.username;
     var password = req.body.password;
-    console.log(username);
     var salt = crypto.randomBytes(128).toString('hex');
     var dbstring = hash(password, salt);
     pool.query('INSERT into "user" (username,password) values ($1,$2)',[username,dbstring],function(err,result){
