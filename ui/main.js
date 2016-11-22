@@ -1,10 +1,4 @@
 console.log('Loaded!');
-var crypto;
-try {
-  crypto = require('crypto');
-} catch (err) {
-  console.log('crypto support is disabled!');
-}
 
 var submit=document.getElementById('login_button');
 
