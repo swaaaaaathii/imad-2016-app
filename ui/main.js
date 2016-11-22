@@ -23,9 +23,6 @@ request.setRequestHeader('Content-Type' , 'application/json');
 request.send(JSON.stringify({username: username, password: password}));
 };
 
-/*var element=document.getElementById('main-text');
-element.innerHTML = 'new text';*/
-
 var image=document.getElementById('img');
 var marginRight=0;
 function moveLeft()
