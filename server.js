@@ -112,7 +112,9 @@ app.get('/test-db',function(req,res){
         }else{
             res.send(JSON.stringify(result.rows));
         }
-})
+    });
+});
+
 app.post('/create-user',function(req,res){
     var username = req.body.username;
     var password = req.body.password;
