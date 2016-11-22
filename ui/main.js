@@ -1,8 +1,8 @@
 console.log('Loaded!');
 
-var login=document.getElementById('login_button');
+var submit=document.getElementById('login_button');
 
-login.onclick = function(){
+submit.onclick = function(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
