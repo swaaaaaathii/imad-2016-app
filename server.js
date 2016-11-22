@@ -105,6 +105,14 @@ app.get('/hash/:input',function(req,res){
     res.send(hashedString);
 });
 
+app.get('/test-db',function(req,res){
+    pool.query('select * from "user"',function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringify(result.rows));
+        }
+})
 app.post('/create-user',function(req,res){
     var username = req.body.username;
     var password = req.body.password;
