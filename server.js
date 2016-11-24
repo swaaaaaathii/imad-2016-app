@@ -18,6 +18,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+
 app.use(session({
     secret : 'teddy-boo',
     cookie : {maxAge : 1800*60*60*24*30} 
@@ -97,6 +98,14 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/check-login',function(req,res){
+    if(req.session && req.session.auth && req.session.auth.userId){
+        res.send('You are logged in with id : ' + req.session.auth.userId.toString());
+    }else{
+        res.send('You are not logged in');
+    }
+});
+
 var pool = new Pool(config);
 
 function hash(input, salt){
@@ -149,13 +158,7 @@ app.post('/login',function(req,res){
    res.send(createTemplate(articles[articleName])); 
 });
 */
-app.get('/check-login',function(req,res){
-    if(req.session && req.session.auth && req.session.auth.userId){
-        res.send('You are logged in with id : ' + req.session.auth.userId.toString());
-    }else{
-        res.send('You are not logged in');
-    }
-});
+
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
