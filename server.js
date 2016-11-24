@@ -97,7 +97,7 @@ var pool = new Pool(config);
 
 function hash(input, salt){
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, "sha512");
-    return ["pbkdf2","10000", salt, hashed.toString('hex')].join('$');
+    return [hashed.toString('hex')];
 }
 
 app.get('/hash/:input',function(req,res){
@@ -129,8 +129,8 @@ app.post('/login',function(req,res){
             if(result.rows.length===0){
                 res.send(403).send('Invalid username/password');
             }else{
-                var dbString = result.rows[0].password;
-                var password = dbString.split('$')[2];
+                var password = result.rows[0].password;
+                //var password = dbString.split('$')[2];
                 var hashedPassword = hash(password, salt);
                 if(hashedPassword === dbString){
                     res.send('Credentials correct!');  
