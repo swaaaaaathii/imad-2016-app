@@ -11,7 +11,7 @@ login.onclick = function(){
             }else if(request.status===402){
                 alert('Username incorrect');
             }else if(request.status===403){
-                alert('Username/password incorrect');
+                alert('Password incorrect');
             }else if(request.status===500){
                 alert('Something wrong with the server');
             }
