@@ -1,8 +1,8 @@
 console.log('Loaded!');
 
-var submit=document.getElementById('login_button');
+var login=document.getElementById('login_button');
 
-submit.onclick = function(){
+login.onclick = function(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
@@ -21,7 +21,7 @@ var password=document.getElementById('password').value;
 console.log(username);
 console.log(password);
 request.open('POST','http://swaaaaaathii.imad.hasura-app.io/login',true);
-request.setRequestHeader('Content-Type' , 'application/json');
+request.setRequestHeader('Content-Type','application/json');
 request.send(JSON.stringify({username: username, password: password}));
 };
 
