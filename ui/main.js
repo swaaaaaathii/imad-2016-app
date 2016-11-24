@@ -35,5 +35,5 @@ function moveLeft()
     image.style.marginRight = marginRight+'px';
 }
 image.onclick = function () { 
-    var interval = setInterval(moveLeft,10);
+    var interval = setInterval(moveLeft,5);
 };
