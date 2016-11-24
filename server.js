@@ -121,17 +121,17 @@ app.post('/login',function(req,res){
             res.status(500).send(err.toString());
         }else{
             if(result.rows.length===0){
-                res.send(403).send('Invalid username');
+                res.send(402).send('Invalid username');
             }else{
                 var dbString = result.rows[0].password;
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password, salt);
                 res.send(hashedPassword);
-                //if(hashedPassword === dbString){
-                  //  res.send('Credentials correct!');  
-                //}else{
-                  //  res.send(403).send('Invalid username/password');
-                //}
+                if(hashedPassword === dbString){
+                    res.send('Credentials correct!');  
+                }else{
+                    res.send(403).send('Invalid username/password');
+                }
             }
         }
     });
