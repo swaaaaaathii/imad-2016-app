@@ -99,11 +99,6 @@ function hash(input, salt){
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
 
-app.get('/hash/:input',function(req,res){
-    var hashedString = hash(req.params.input,'bb5e2e89add5b3b1ebc59f62c76d6aacbbb3caf2084500328a85b689e0ff9399c94687635cb36c06df2d11c2f688846d1444798028e3c491e065801cff3cc1f4fc3dc60d3473f9419dba7c6697d63ce5cb2f249da833cf9f98ef33348d8fcb99ebd773231b22ed8fc36d954475741e281a2d8aa451502035b31ac606822139fb');
-    res.send(hashedString);
-});
-
 app.post('/create-user',function(req,res){
     var username = req.body.username;
     var password = req.body.password;
@@ -131,6 +126,7 @@ app.post('/login',function(req,res){
                 var dbString = result.rows[0].password;
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password, salt);
+                console.log(hashedPassword);
                 if(hashedPassword === dbString){
                     res.send('Credentials correct!');  
                 }else{
