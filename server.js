@@ -18,7 +18,6 @@ var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
-
 /*var articles = {
     'article-one': {
         title : 'Article One|Swathi Nagarajan',
