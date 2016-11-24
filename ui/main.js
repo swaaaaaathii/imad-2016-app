@@ -6,7 +6,7 @@ login.onclick = function(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
-            if(request.status===200){
+            if(request.status===201){
                 alert('Logged in successfully');
             }else if(request.status===402){
                 alert('Username incorrect');
