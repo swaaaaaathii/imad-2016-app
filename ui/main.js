@@ -37,3 +37,20 @@ function moveLeft()
 image.onclick = function () { 
     var interval = setInterval(moveLeft,5);
 };
+
+var submit=document.getElementById('submit_btn');
+
+submit.onclick = function(){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status===200){
+                alert('User created successfully');
+            }else if(request.status===403){
+                alert('User not created. Re-try');
+            }else if(request.status===500){
+                alert('Something wrong with the server');
+            }
+        }
+    };
+};
