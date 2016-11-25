@@ -41,12 +41,12 @@ body {
 }
 
 .details{
-    max-width:800px;
+    max-width:500px;
     color:#ce4747;
     margin :0 auto;
     font-family : sans-serif;
     padding-left : 15px;
     padding-right : 20px;
     text-align: center;
-    font-size: 200%;
+    font-size: 150%;
 }
