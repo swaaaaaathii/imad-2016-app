@@ -53,8 +53,10 @@ body {
 }
 
 .sign-up{
-    font-size: 300%;
+    font-size: 100%;
     font-family: arial;
+    background-color: white;
+    background-image: none;
 }
 
 .button {
