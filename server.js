@@ -77,9 +77,17 @@ function hash (input, salt) {
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
 
+app.get('/signup',function(req,res){
+   res.sendFile(path.join(__dirname, 'ui', 'sign-up.html')); 
+});
+
 app.post('/create-user', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
+   var name = req.body.name;
+   var date = req.body.date;
+   var phno = req.body.phno;
+   var email = req.body.email;
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
