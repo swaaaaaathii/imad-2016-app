@@ -27,6 +27,12 @@ request.setRequestHeader('Content-Type', 'application/json');
 request.send(JSON.stringify({username: username, password: password}));
 };
 
+var signup=document.getElementById('create_button');
+
+signup.onclick = function(){
+    var request = new XMLHttpRequest();    
+};
+
 var image=document.getElementById('img');
 var marginRight=0;
 function moveLeft()
