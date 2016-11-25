@@ -62,4 +62,5 @@ body {
     -moz-appearance: button;
     appearance: button;
     text-decoration: none;
+    color: black;
 }
