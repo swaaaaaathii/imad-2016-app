@@ -41,10 +41,10 @@ body {
 }
 
 .details{
-    max-width:500px;
+    max-width:800px;
     color:#ce4747;
     margin :0 auto;
-    font-family : sans-serif;
+    font-family : arial;
     padding-left : 15px;
     padding-right : 20px;
     text-align: center;
