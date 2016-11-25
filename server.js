@@ -77,7 +77,7 @@ function hash (input, salt) {
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
 
-app.get('/signup',function(req,res){
+app.get('/sign-up',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'sign-up.html')); 
 });
 
