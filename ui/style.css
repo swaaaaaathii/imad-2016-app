@@ -63,4 +63,6 @@ body {
     appearance: button;
     text-decoration: none;
     color: black;
+    padding-left: 50px;
+    padding-right: 50px;
 }
