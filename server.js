@@ -38,7 +38,7 @@ function createTemplate (data) {
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-              <div>
+              <div align = "center">
                   <a href="/ask">  Ask Suggestion  </a>
                   <a href="/make">  Make Suggestion  </a>
                   <a href="/review">  Write a review  </a>
@@ -46,6 +46,7 @@ function createTemplate (data) {
               <br/><br/>
               <hr/><br/><br/>
               <div class="udetails">
+                  <hr/><br/><br/>
                   Name : 
                   ${name}
                   <br/><br/><br/>
@@ -58,8 +59,8 @@ function createTemplate (data) {
                   Email ID : 
                   ${email}
                   <br/><br/><br/>
+                  <hr/>
               </div>
-              <hr/>
         </div>
       </body>
     </html>
