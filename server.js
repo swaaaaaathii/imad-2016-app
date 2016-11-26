@@ -46,6 +46,9 @@ function createTemplate (data) {
               </div>
               <hr/><br/>
               <div>
+                  Name : 
+                  ${name}
+                  <br/><br/><br/>
                   Birthday : 
                   ${date.toDateString()}
                   <br/><br/><br/>
