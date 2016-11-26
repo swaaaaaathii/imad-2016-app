@@ -40,30 +40,24 @@ function createTemplate (data) {
       <body>
           <div class="udetails">
               <div>
-                  <a href="/ask">Ask Suggestion</a>
-                  <a href="/make">Make Suggestion</a>
-                  <a href="/review">Write a review</a>
+                  <a href="/ask">Ask Suggestion  </a>
+                  <a href="/make">Make Suggestion  </a>
+                  <a href="/review">Write a review  </a>
               </div>
-              <hr/>
+              <hr/><br/>
               <div>
                   Birthday : 
                   ${date.toDateString()}
-                  <br/>
+                  <br/><br/><br/>
                   Contact Number : 
                   ${phno}
-                  <br/>
+                  <br/><br/><br/>
                   Email ID : 
                   ${email}
+                  <br/>
               </div>
               <hr/>
-              <h4>Comments</h4>
-              <div id="comment_form">
-              </div>
-              <div id="comments">
-                <center>Loading comments...</center>
-              </div>
-          </div>
-          <script type="text/javascript" src="/ui/article.js"></script>
+        </div>
       </body>
     </html>
     `;
