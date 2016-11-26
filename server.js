@@ -44,7 +44,7 @@ function createTemplate (data) {
                   <a href="/make">Make Suggestion  </a>
                   <a href="/review">Write a review  </a>
               </div>
-              <hr/><br/>
+              <hr/><br/><br/>
               <div>
                   Name : 
                   ${name}
@@ -57,7 +57,7 @@ function createTemplate (data) {
                   <br/><br/><br/>
                   Email ID : 
                   ${email}
-                  <br/>
+                  <br/><br/><br/>
               </div>
               <hr/>
         </div>
