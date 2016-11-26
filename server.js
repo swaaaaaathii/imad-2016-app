@@ -39,7 +39,6 @@ function createTemplate (data) {
       </head> 
       <body>
               <div align = "center">
-                <input type = "text" id = "book_name" place-holder = "Search for book...">
                 <a href="/book-search-results" class="button">Search</a>
                 <br/><br/>
                 <a href="/review">  Write a review  </a>
