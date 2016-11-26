@@ -39,9 +39,7 @@ function createTemplate (data) {
       </head> 
       <body>
               <div align = "center">
-                <a href="/book-search-results" class="button">Search</a>
-                <br/><br/>
-                <a href="/review">  Write a review  </a>
+                <a href="/comments">Go to discussion page</a>
               </div>
               <br/><br/>
               <br/><br/>
