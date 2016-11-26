@@ -166,15 +166,19 @@ app.get('/user/:username', function(req, res){
 
 app.post('/search-results/:book_name',function(req,res){
      if (req.session && req.session.auth && req.session.auth.userId) {
-     pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.book_name], function (err, result){
-           if (err) {
-              res.status(500).send(err.toString());
-           } else {
-              var len = result.rows.length;
-              var reviewdata = result.rows;
-              res.send(createSearchTemplate(reviewdata, len));  
-           }
-       });
+         var msg;
+         pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.book_name], function (err, result){
+               if (err) {
+                  res.status(500).send(err.toString());
+               } else {
+                  var len = result.rows.length;
+                  var reviewdata = result.rows;
+                  for (i = 0; i < len; i++){
+                      msg = "<b>" + results.rows.review(i).log + "</b></br><br/>";
+                      document.querySelector('review').innerHTML +=  msg;
+                   }  
+               }
+           });
    } else {
        res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
    }    
