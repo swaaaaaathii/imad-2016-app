@@ -44,9 +44,10 @@ function createTemplate (data) {
                   <a href="/review">  Write a review  </a>
               </div>
               <br/><br/>
-              <hr/><br/><br/>
+              <br/><br/>
+              <hr style="width: 600px"/>
               <div class="udetails">
-                  <hr/><br/><br/>
+                  <br/><br/>
                   Name : 
                   ${name}
                   <br/><br/><br/>
@@ -59,9 +60,8 @@ function createTemplate (data) {
                   Email ID : 
                   ${email}
                   <br/><br/><br/>
-                  <hr/>
               </div>
-        </div>
+              <hr style="width: 600px"/>
       </body>
     </html>
     `;
