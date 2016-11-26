@@ -6,8 +6,6 @@ post.onclick = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status===200){
                 alert('Review posted');
-            }else if(request.status===403){
-                alert('Unable to post. Re-try');
             }else if(request.status===500){
                 alert('Something wrong with the server');
             }
