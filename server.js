@@ -153,7 +153,7 @@ app.get('/user/:username', function(req, res){
            }
        });
    } else {
-       res.status(400).send('You are not logged in');
+       res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
    } 
 });
 
