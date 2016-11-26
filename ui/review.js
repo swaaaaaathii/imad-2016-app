@@ -1,4 +1,4 @@
-var post=document.getElementById('post_btn');
+var post=document.getElementById('post_button');
 
 post.onclick = function(){
     var request = new XMLHttpRequest();
