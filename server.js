@@ -92,6 +92,19 @@ app.get('/sign-up',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'sign-up.html')); 
 });
 
+app.post('/create-review', function (req, res) {
+   var book_name = req.body.book_name;
+   var book_genre = req.body.book_genre;
+   var review = req.body.review;
+   pool.query('INSERT INTO review (uid,book_name,book_genre,review) VALUES ($1, $2, $3, $4)', [req.session.auth.userId, book_name, book_genre, review], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      }else{
+         res.send('Review posted');
+      }
+   });
+});
+
 app.post('/create-user', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
