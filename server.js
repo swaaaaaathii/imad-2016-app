@@ -22,17 +22,17 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
-/*function createTemplate (data) {
-    var title = data.title;
+function createTemplate (data) {
+    var name = data.name;
     var date = data.date;
-    var heading = data.heading;
-    var content = data.content;
+    var phno = data.phno;
+    var email = data.email;
     
     var htmlTemplate = `
     <html>
       <head>
           <title>
-              ${title}
+              ${name}
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
@@ -65,7 +65,7 @@ app.use(session({
     </html>
     `;
     return htmlTemplate;
-}*/
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
