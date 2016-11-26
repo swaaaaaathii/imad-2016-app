@@ -17,5 +17,5 @@ var book_name=document.getElementById('book_name').value;
 request.open('POST','http://swaaaaaathii.imad.hasura-app.io/search-results'+book_name, true);
 request.setRequestHeader('Content-Type', 'application/json');
 request.send(JSON.stringify({book_name: book_name}));
-location.href = '/book-search-results';
+//location.href = '/book-search-results';
 };
