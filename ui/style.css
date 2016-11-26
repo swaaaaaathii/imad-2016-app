@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
-    background-color: white;
     margin-top: 60px;
+    background-image: url(http://www.pptback.com/uploads/white-book-backgrounds-powerpoint.jpg);
 }
 
 .center {
@@ -31,7 +31,6 @@ body {
     font-family : Algerian;
     padding-left : 15px;
     padding-right : 20px;
-    background-image: url(http://www.pptback.com/uploads/white-book-backgrounds-powerpoint.jpg);
 }
 
 .login{
@@ -56,8 +55,6 @@ body {
     font-size: 100%;
     font-family: arial;
     text-align: center;
-    background-color: white;
-    background-image: none;
     max-width:2000px;
     margin :0;
     padding-left : 25px;
