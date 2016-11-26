@@ -9,7 +9,7 @@ login.onclick = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status===200){
                 alert('Logged in successfully');
-                //location.href = '/user-data';
+                location.href = '/user/'+username;
             }else if(request.status===403){
                 alert('Username incorrect');
             }else if(request.status===402){
