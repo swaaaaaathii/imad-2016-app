@@ -147,8 +147,8 @@ app.get('/logout', function (req, res) {
 });
 
 app.get('/user-data', function(req, res){
-   //if (req.session && req.session.auth && req.session.auth.userId) {
-       pool.query('SELECT * FROM "user" WHERE username = $1',['swa'], function (err, result){
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       pool.query('SELECT * FROM "user" WHERE username = $1',[req.session.auth.userId], function (err, result){
            if (err) {
               res.status(500).send(err.toString());
            } else {
@@ -156,9 +156,9 @@ app.get('/user-data', function(req, res){
               res.send(createTemplate(userdata));  
            }
        });
-   //} else {
-     //  res.status(400).send('You are not logged in');
-   //} 
+   } else {
+       res.status(400).send('You are not logged in');
+   } 
 });
 
 var pool = new Pool(config);
