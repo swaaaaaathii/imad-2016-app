@@ -84,41 +84,23 @@ app.get('/sign-up',function(req,res){
 app.post('/create-user', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
-   var salt = crypto.randomBytes(128).toString('hex');
-   var dbString = hash(password, salt);
-   var id;
-   pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
-      if (err) {
-          res.status(500).send(err.toString());
-      }
-   });
-});
-   
-app.post('/create-userdetails',function(req,res){
-   var username = req.body.username;
    var name = req.body.name;
    var date = req.body.date;
    var phno = req.body.phno;
    var email = req.body.email;
-   pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
+   var salt = crypto.randomBytes(128).toString('hex');
+   var dbString = hash(password, salt);
+   var id;
+   pool.query('INSERT INTO "user" (username,password,name,date,phno,email) VALUES ($1, $2, $3, $4, $5, $6)', [username, dbString, name, date, phno, email], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
-      } else {
-          if (result.rows.length === 0) {
-              res.status(403).send('Username does not exist');
-          } else {
-              var id=result.rows[0].id;
-              pool.query('INSERT INTO details values($1,$2,$3,$4,$5)',[id,name,date,phno,email],function(err, result){
-               if (err) {
-                  res.status(500).send(err.toString());
-              } else {
-                  res.send('User details successfully created: ' + username);
-              }
-           });
-          }
-        }
-    });
+      }else{
+         res.send('User details successfully created: ' + username);
+      }
+   });
 });
+   
+
 
 app.post('/login', function (req, res) {
    var username = req.body.username;
