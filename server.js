@@ -40,7 +40,7 @@ function createTemplate (data) {
       <body>
               <div align = "center">
                 <input type = "text" id = "book_name" place-holder = "Search for book...">
-                <input type = "button" value = "Search" id="search_btn">
+                <a href="/book-search-results" class="button">Search</a>
                 <br/><br/>
                 <a href="/review">  Write a review  </a>
               </div>
@@ -63,7 +63,6 @@ function createTemplate (data) {
                   <br/><br/><br/>
               </div>
               <hr style="width: 600px"/>
-              <script type="text/javascript" src="/ui/search.js">
         </script>
       </body>
     </html>
