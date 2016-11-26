@@ -84,10 +84,6 @@ app.get('/sign-up',function(req,res){
 app.post('/create-user', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
-   var name = req.body.name;
-   var date = req.body.date;
-   var phno = req.body.phno;
-   var email = req.body.email;
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
    var id;
@@ -99,6 +95,11 @@ app.post('/create-user', function (req, res) {
 });
    
 app.post('/create-userdetails',function(req,res){
+   var username = req.body.username;
+   var name = req.body.name;
+   var date = req.body.date;
+   var phno = req.body.phno;
+   var email = req.body.email;
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
