@@ -39,9 +39,10 @@ function createTemplate (data) {
       </head> 
       <body>
               <div align = "center">
-                  <a href="/ask">  Ask Suggestion  </a>
-                  <a href="/make">  Make Suggestion  </a>
-                  <a href="/review">  Write a review  </a>
+                <input type = "text" id = "book_name" place-holder = "Search for book...">
+                <input type = "button" value = "Search" id="search_btn">
+                <br/><br/>
+                <a href="/review">  Write a review  </a>
               </div>
               <br/><br/>
               <br/><br/>
