@@ -161,6 +161,22 @@ app.get('/user/:username', function(req, res){
    } 
 });
 
+app.get('/ask/:username', function(req,res) { 
+    if (req.session && req.session.auth && req.session.auth.userId) {
+       pool.query('SELECT * FROM questions q, answer a WHERE q.uid = $1 and a.uid!= $1 and q.id=a.qid group by uid',[req.session.auth.userId], function (err, result){
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              var quesdata = result.rows;
+              res.send(createAskTemplate(quesdata));  
+           }
+       });
+   } else {
+       res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
+   } 
+});
+})
+
 var pool = new Pool(config);
 
 app.get('/ui/:fileName', function (req, res) {
