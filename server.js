@@ -148,7 +148,7 @@ app.get('/logout', function (req, res) {
 
 app.get('/user-data', function(req, res){
    //if (req.session && req.session.auth && req.session.auth.userId) {
-       pool.query('SELECT * FROM "user" WHERE username = $1',[req.session.auth.userId], function (err, result){
+       pool.query('SELECT * FROM "user" WHERE username = swa', function (err, result){
            if (err) {
               res.status(500).send(err.toString());
            } else {
