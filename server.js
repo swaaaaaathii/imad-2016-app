@@ -39,7 +39,7 @@ function createTemplate (data) {
       </head> 
       <body>
               <div align = "center">
-                <a href="/comments">Go to discussion page</a>
+                <a href="/review">Write a review</a>
               </div>
               <br/><br/>
               <br/><br/>
