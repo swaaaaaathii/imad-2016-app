@@ -38,19 +38,20 @@ function createTemplate (data) {
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-          <div class="container">
+          <div class="details">
               <div>
                   <a href="/">Home</a>
               </div>
               <hr/>
-              <h3>
-                  ${heading}
-              </h3>
               <div>
+                  Birthday : 
                   ${date.toDateString()}
-              </div>
-              <div>
-                ${content}
+                  <br/>
+                  Contact Number : 
+                  ${phno}
+                  <br/>
+                  Email ID : 
+                  ${email}
               </div>
               <hr/>
               <h4>Comments</h4>
