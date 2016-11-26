@@ -51,6 +51,17 @@ body {
     font-size: 125%;
 }
 
+.udetails{
+    max-width:800px;
+    color:#ce4747;
+    margin :0 auto;
+    font-family : arial;
+    padding-left : 25px;
+    padding-right : 20px;
+    text-align: center;
+    font-size: 125%;
+}
+
 .sign-up{
     font-size: 100%;
     font-family: arial;
