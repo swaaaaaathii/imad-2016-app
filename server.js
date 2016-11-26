@@ -97,7 +97,7 @@ app.post('/create-user', function (req, res) {
           res.send('User successfully created: ' + username);
       }
    });
-   /*pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
+   pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -114,7 +114,7 @@ app.post('/create-user', function (req, res) {
       } else {
           res.send('User details successfully created: ' + username);
       }
-   });*/
+   });
 });
 
 app.post('/login', function (req, res) {
