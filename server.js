@@ -40,10 +40,11 @@ function createTemplate (data) {
       <body>
           <div class="udetails">
               <div>
-                  <a href="/ask">Ask Suggestion  </a>
-                  <a href="/make">Make Suggestion  </a>
-                  <a href="/review">Write a review  </a>
+                  <a href="/ask">  Ask Suggestion  </a>
+                  <a href="/make">  Make Suggestion  </a>
+                  <a href="/review">  Write a review  </a>
               </div>
+              <br/><br/>
               <hr/><br/><br/>
               <div>
                   Name : 
