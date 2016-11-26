@@ -147,13 +147,14 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
-app.get('/user-page', function(req, res){
+app.get('/user/:username', function(req, res){
    if (req.session && req.session.auth && req.session.auth.userId) {
-       pool.query('SELECT * FROM "user" WHERE id = $1',[req.session.auth.userId], function (err, result){
+       pool.query('SELECT * FROM "user" WHERE username = $1',[req.params.username], function (err, result){
            if (err) {
               res.status(500).send(err.toString());
            } else {
-              res.send(JSON.stringify(result.rows));    
+              var userdata = result.rows[0];
+              res.send(createTemplate(userdata));  
            }
        });
    } 
