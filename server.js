@@ -92,6 +92,7 @@ app.post('/create-user', function (req, res) {
    var dbString = hash(password, salt);
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
+          console.log('error in 1st query');
           res.status(500).send(err.toString());
       } else {
           res.send('User successfully created: ' + username);
@@ -99,6 +100,7 @@ app.post('/create-user', function (req, res) {
    });
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
       if (err) {
+          console.log('error in 2nd query');
           res.status(500).send(err.toString());
       } else {
           if (result.rows.length === 0) {
@@ -110,6 +112,7 @@ app.post('/create-user', function (req, res) {
     });
    pool.query('INSERT INTO details values($1,$2,$3,$4,$5)',[id,name,date,phno,email],function(err, result){
        if (err) {
+           console.log('error in 3rd query');
           res.status(500).send(err.toString());
       } else {
           res.send('User details successfully created: ' + username);
