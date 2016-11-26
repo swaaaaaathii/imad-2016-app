@@ -104,16 +104,16 @@ app.post('/create-user', function (req, res) {
               res.status(403).send('Username does not exist');
           } else {
               var id=result.rows[0].id;
+              pool.query('INSERT INTO details values($1,$2,$3,$4,$5)',[id,name,date,phno,email],function(err, result){
+               if (err) {
+                  res.status(500).send(err.toString());
+              } else {
+                  res.send('User details successfully created: ' + username);
+              }
+           });
           }
         }
     });
-   pool.query('INSERT INTO details values($1,$2,$3,$4,$5)',[id,name,date,phno,email],function(err, result){
-       if (err) {
-          res.status(500).send(err.toString());
-      } else {
-          res.send('User details successfully created: ' + username);
-      }
-   });
 });
 
 app.post('/login', function (req, res) {
