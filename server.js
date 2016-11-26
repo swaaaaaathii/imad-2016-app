@@ -164,19 +164,20 @@ app.get('/user/:username', function(req, res){
    } 
 });
 
-app.get('/ask/:username', function(req,res) { 
-    if (req.session && req.session.auth && req.session.auth.userId) {
-       pool.query('SELECT * FROM questions q, answer a WHERE q.uid = $1 and a.uid!= $1 and q.id=a.qid group by uid',[req.session.auth.userId], function (err, result){
+app.post('/search-results/:book_name',function(req,res){
+     if (req.session && req.session.auth && req.session.auth.userId) {
+     pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.book_name], function (err, result){
            if (err) {
               res.status(500).send(err.toString());
            } else {
-              var quesdata = result.rows;
-              res.send(createAskTemplate(quesdata));  
+              var len = result.rows.length;
+              var reviewdata = result.rows;
+              res.send(createSearchTemplate(reviewdata, len));  
            }
        });
    } else {
        res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
-   } 
+   }    
 });
 
 var pool = new Pool(config);
