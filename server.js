@@ -156,6 +156,8 @@ app.get('/user-data', function(req, res){
               res.send(createTemplate(userdata));  
            }
        });
+   } else {
+       res.status(400).send('You are not logged in');
    } 
 });
 
