@@ -63,6 +63,8 @@ function createTemplate (data) {
                   <br/><br/><br/>
               </div>
               <hr style="width: 600px"/>
+              <script type="text/javascript" src="/ui/search.js">
+        </script>
       </body>
     </html>
     `;
