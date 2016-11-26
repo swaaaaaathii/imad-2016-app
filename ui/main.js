@@ -1,4 +1,5 @@
 console.log('Loaded!');
+alert('Click on the bookworm to see it crawl');
 
 var login=document.getElementById('login_button');
 
