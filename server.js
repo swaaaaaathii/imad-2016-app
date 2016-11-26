@@ -90,11 +90,10 @@ app.post('/create-user', function (req, res) {
    var email = req.body.email;
    var salt = crypto.randomBytes(128).toString('hex');
    var dbString = hash(password, salt);
+   var id;
    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
-      } else {
-          res.send('User successfully created: ' + username);
       }
    });
    pool.query('SELECT * FROM "user" WHERE username = $1', [username], function (err, result) {
