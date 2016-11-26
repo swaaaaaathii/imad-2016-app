@@ -67,6 +67,5 @@ body {
     appearance: button;
     text-decoration: none;
     color: black;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 25px;
 }
