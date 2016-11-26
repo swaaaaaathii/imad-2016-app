@@ -21,9 +21,5 @@ var phno=document.getElementById('phno').value;
 var email=document.getElementById('email').value;
 request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-user',true);
 request.setRequestHeader('Content-Type', 'application/json');
-request.send(JSON.stringify({username: username, password: password}));
-
-request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-userdetails',true);
-request.setRequestHeader('Content-Type', 'application/json');
-request.send(JSON.stringify({username: username, name: name, date: date, phno: phno, email: email}));
+request.send(JSON.stringify({username: username, password: password, name: name, date: date, phno: phno, email: email}));
 };
