@@ -38,7 +38,6 @@ function createTemplate (data) {
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-          <div class="udetails">
               <div>
                   <a href="/ask">  Ask Suggestion  </a>
                   <a href="/make">  Make Suggestion  </a>
@@ -46,7 +45,7 @@ function createTemplate (data) {
               </div>
               <br/><br/>
               <hr/><br/><br/>
-              <div>
+              <div class="udetails">
                   Name : 
                   ${name}
                   <br/><br/><br/>
