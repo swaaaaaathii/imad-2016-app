@@ -23,5 +23,5 @@ request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-user',true);
 request.setRequestHeader('Content-Type', 'application/json');
 console.log(username);
 console.log(password);
-request.send(JSON.stringify({username: username, password: password, name: name, date: date, phno: phno, email: email}));
+request.send(JSON.stringify({username: username, password: password})); //name: name, date: date, phno: phno, email: email}));
 };
