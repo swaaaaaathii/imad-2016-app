@@ -2,6 +2,7 @@ console.log('Loaded!');
 alert('Click on the bookworm to see it crawl');
 
 var login=document.getElementById('login_button');
+var username=document.getElementById('username').value;
 
 login.onclick = function(){
     var request = new XMLHttpRequest();
@@ -20,7 +21,6 @@ login.onclick = function(){
         }
     };
 
-var username=document.getElementById('username').value;
 var password=document.getElementById('password').value;
 request.open('POST','http://swaaaaaathii.imad.hasura-app.io/login',true);
 request.setRequestHeader('Content-Type', 'application/json');
