@@ -146,6 +146,18 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
+app.get('/user-page', function(req, res){
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       pool.query('SELECT * FROM "user" WHERE id = $1',[req.session.auth.userId], function (err, result){
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(JSON.stringify(result.rows));    
+           }
+       });
+   } 
+});
+
 var pool = new Pool(config);
 
 app.get('/ui/:fileName', function (req, res) {
