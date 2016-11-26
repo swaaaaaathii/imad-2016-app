@@ -75,6 +75,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+app.get('/book-search-results', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'search_results.html'));
+});
 
 function hash (input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
