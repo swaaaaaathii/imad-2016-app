@@ -144,7 +144,7 @@ app.post('/view-reviews/:bookname',function (req,res){
               res.status(500).send(err.toString());
            } else {
               var no_of_reviews = result.rows.length;
-              res.send('<html><body><a href="/view-reviews/"+req.params.bookname+"/"+no_of_reviews>View reviews</a>');  
+              res.send('<html><body><a href="/view-reviews/"+req.params.bookname+"/"+no_of_reviews>View reviews</a><script type="text/javascript" src="/ui/viewresult.js"></script></body></html>');  
            }
        });
    } else {
