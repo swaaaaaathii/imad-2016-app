@@ -40,7 +40,7 @@ function createTemplate (data) {
       <body>
               <div align = "center">
                 <a href="/review">Write a review</a>
-                <a h
+                <a href="/logout">Log Out</a>
               </div>
               <br/><br/>
               <br/><br/>
@@ -70,10 +70,6 @@ function createTemplate (data) {
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
-app.get('/book-search-results', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'search_results.html'));
 });
 
 app.get('/review',function(req,res){
