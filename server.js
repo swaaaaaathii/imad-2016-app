@@ -90,7 +90,7 @@ app.post('/create-review', function (req, res) {
    var book_name = req.body.book_name;
    var book_genre = req.body.book_genre;
    var review = req.body.review;
-   pool.query('INSERT INTO review (book_name,book_genre,book_review) VALUES ($1, $2, $3)', [book_name, book_genre, review], function (err, result) {
+   pool.query('INSERT INTO review (uid,book_name,book_genre,book_review) VALUES ($1, $2, $3)', [req.session.auth.userId, book_name, book_genre, review], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       }else{
