@@ -257,6 +257,7 @@ app.get('/view-reviews/:bookname',function (req,res){
 
 app.get('/view-reviews/:bookname/:rno',function(req,res){
        if (req.session && req.session.auth && req.session.auth.userId) {
+       var rno=req.params.rno;
        pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.bookname], function (err, result){
            if (err) {
               res.status(500).send(err.toString());
