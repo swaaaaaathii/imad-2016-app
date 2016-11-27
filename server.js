@@ -238,7 +238,7 @@ app.get('/user/:username', function(req, res){
    } 
 });
 
-app.post('/view-reviews/:bookname',function (req,res){
+app.get('/view-reviews/:bookname',function (req,res){
     if (req.session && req.session.auth && req.session.auth.userId) {
        pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.bookname], function (err, result){
            if (err) {
