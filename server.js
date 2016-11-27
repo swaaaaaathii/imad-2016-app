@@ -40,6 +40,7 @@ function createTemplate (data) {
       <body>
               <div align = "center">
                 <a href="/review">Write a review</a>
+                <a h
               </div>
               <br/><br/>
               <br/><br/>
@@ -180,7 +181,7 @@ app.get('/user/:username', function(req, res){
    } 
 });
 
-app.get('/get-comments', function (req, res) {
+/*app.get('/get-comments', function (req, res) {
    // make a select request
    // return a response with the results
    pool.query('SELECT * from comment ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
@@ -211,7 +212,7 @@ app.post('/submit-comment', function (req, res) {
     } else {
         res.status(403).send('Only logged in users can comment');
     }
-});
+});*/
 
 var pool = new Pool(config);
 
