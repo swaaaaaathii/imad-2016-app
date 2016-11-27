@@ -41,6 +41,8 @@ function createTemplate (data) {
               <div align = "center">
                 <a href="/review">Write a review</a>
                 <a href="/logout">Log Out</a>
+                <input type="text" id="bname" placeholder="Search for..."/>
+                <input type="button" id="search_btn"/>
               </div>
               <br/><br/>
               <br/><br/>
