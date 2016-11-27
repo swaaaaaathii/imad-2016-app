@@ -82,7 +82,7 @@ function createViewTemplate (data) {
     <html>
       <head>
           <title>
-              ${title}
+              review
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
@@ -246,8 +246,8 @@ app.get('/view-reviews/:bookname',function (req,res){
            } else {
               var no_of_reviews = result.rows.length;
               var bname = req.params.bookname;
-              var htmlstring = "/view-reviews/"+bname+"/"+no_of_reviews;
-              res.send('<html><body><a href="${htmlstring}">View reviews</a></body></html>');  
+              var htmlstring = `<html><body><a href="/view-reviews/"+${bname}+"/"+${no_of_rows}>View reviews</a></body></html>`
+              res.send();  
            }
        });
    } else {
