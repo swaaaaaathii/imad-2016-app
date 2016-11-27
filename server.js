@@ -85,18 +85,18 @@ app.get('/sign-up',function(req,res){
    res.sendFile(path.join(__dirname, 'ui', 'sign-up.html')); 
 });
 
-app.post('/create-review/:username', function (req, res) {
+app.post('/create-review', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
    var book_name = req.body.book_name;
    var book_genre = req.body.book_genre;
    var review = req.body.review;
-   pool.query('SELECT * FROM "user" where username=$1',[req.params.username],function (err, result) {
+   /*pool.query('SELECT * FROM "user" where username=$1',[req.params.username],function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       }else{
          var uid=result.rows[0].id;
       }
-   });
+   });*/
    pool.query('INSERT INTO review (uid,book_name,book_genre,book_review) VALUES ($1, $2, $3, $4)', [uid, book_name, book_genre, review], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
