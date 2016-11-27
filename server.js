@@ -86,7 +86,7 @@ app.get('/sign-up',function(req,res){
 });
 
 app.post('/create-review', function (req, res) {
-   if (req.session && req.session.auth && req.session.auth.userId) {
+   //if (req.session && req.session.auth && req.session.auth.userId) {
    var book_name = req.body.book_name;
    var book_genre = req.body.book_genre;
    var review = req.body.review;
@@ -97,9 +97,9 @@ app.post('/create-review', function (req, res) {
          res.send('Review posted');
       }
    });
-    } else {
+   /* } else {
        res.status(400).send('You are not logged in');
-   }
+   }*/
 });
 
 app.post('/create-user', function (req, res) {
