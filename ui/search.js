@@ -12,7 +12,7 @@ search.onclick = function(){
         }
     };
 var book_name=document.getElementById('bname').value;
-request.open('GET','http://swaaaaaathii.imad.hasura-app.io/',true);
+request.open('POST','http://swaaaaaathii.imad.hasura-app.io/view-reviews/'+bname,true);
 request.setRequestHeader('Content-Type', 'application/json');
 request.send(JSON.stringify({book_name: book_name, book_genre: book_genre, review: review}));
 };
