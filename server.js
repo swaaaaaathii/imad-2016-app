@@ -247,7 +247,7 @@ app.get('/view-reviews/:bookname',function (req,res){
               var no_of_reviews = result.rows.length;
               var bname = req.params.bookname;
               var htmlstring = "/view-reviews/"+bname+"/"+no_of_reviews;
-              res.send('<html><body><a href=htmlstring>View reviews</a></body></html>');  
+              res.send('<html><body><a href="${htmlstring}">View reviews</a></body></html>');  
            }
        });
    } else {
