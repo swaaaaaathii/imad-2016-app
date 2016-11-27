@@ -97,7 +97,7 @@ app.post('/create-review/:username', function (req, res) {
          var uid=result.rows[0].id;
       }
    });
-   pool.query('INSERT INTO review (uid,book_name,book_genre,book_review) VALUES ($1, $2, $3, $4)', [req.session.auth.userId, book_name, book_genre, review], function (err, result) {
+   pool.query('INSERT INTO review (uid,book_name,book_genre,book_review) VALUES ($1, $2, $3, $4)', [uid, book_name, book_genre, review], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       }else{
