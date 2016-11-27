@@ -14,7 +14,7 @@ post.onclick = function(){
 var book_name=document.getElementById('book_name').value;
 var book_genre=document.getElementById('book_genre').value;
 var review=document.getElementById('review').value;
-request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-review',true);
+request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-review/'+username,true);
 request.setRequestHeader('Content-Type', 'application/json');
 request.send(JSON.stringify({book_name: book_name, book_genre: book_genre, review: review}));
 };
