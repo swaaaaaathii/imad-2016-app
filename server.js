@@ -238,6 +238,22 @@ app.get('/user/:username', function(req, res){
    } 
 });
 
+app.post('/view-reviews/:bookname',function (req,res){
+    if (req.session && req.session.auth && req.session.auth.userId) {
+       pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.bookname], function (err, result){
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              var no_of_reviews = result.rows.length;
+              res.send('<html><body><a href="/view-reviews/"+req.params.bookname+"/"+no_of_reviews>View reviews</a></body></html>');  
+           }
+       });
+   } else {
+       res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
+   } 
+});
+
+
 app.get('/view-reviews/:bookname/:rno',function(req,res){
        if (req.session && req.session.auth && req.session.auth.userId) {
        pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.bookname], function (err, result){
@@ -253,20 +269,6 @@ app.get('/view-reviews/:bookname/:rno',function(req,res){
    } 
 });
 
-app.post('/view-reviews/:bookname',function (req,res){
-    if (req.session && req.session.auth && req.session.auth.userId) {
-       pool.query('SELECT * FROM review WHERE book_name = $1',[req.params.bookname], function (err, result){
-           if (err) {
-              res.status(500).send(err.toString());
-           } else {
-              var no_of_reviews = result.rows.length;
-              res.send('<html><body><a href="/view-reviews/"+req.params.bookname+"/"+no_of_reviews>View reviews</a></body></html>');  
-           }
-       });
-   } else {
-       res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
-   } 
-});
 
 var pool = new Pool(config);
 
