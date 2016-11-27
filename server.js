@@ -267,7 +267,6 @@ app.post('/view-reviews/:bookname',function (req,res){
        res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
    } 
 });
-});
 
 var pool = new Pool(config);
 
