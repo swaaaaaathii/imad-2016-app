@@ -244,7 +244,7 @@ app.get('/view-reviews/:bookname',function (req,res){
            if (err) {
               res.status(500).send(err.toString());
            } else {
-              var no_of_reviews = result.rows.length;
+              var no_of_reviews = result.rows.length-1;
               var bname = req.params.bookname;
               var htmllink = '/view-reviews/'+bname+'/'+no_of_reviews;
               var htmlstring = `<html><body><a href=${htmllink}>View reviews</a></body></html>`
