@@ -285,10 +285,11 @@ app.get('/get-comments/:bookname', function (req, res) {
    });
 });
 
-app.post('/submit-comment/:bookname', function (req, res) {
+app.post('/submit-comment/:bookname/:rno', function (req, res) {
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
+        var rno = req.params.rno;
         pool.query('SELECT * from review where book_name = $1', [req.params.bookname], function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
@@ -296,7 +297,8 @@ app.post('/submit-comment/:bookname', function (req, res) {
                 if (result.rows.length === 0) {
                     res.status(400).send('Review not found');
                 } else {
-                    var reviewId = result.rows[0].id;
+                    var r_no = result.rows.length-rno-1;
+                    var reviewId = result.rows[r_no].id;
                     // Now insert the right comment for this article
                     pool.query(
                         "INSERT INTO comment (comment, review_id, user_id) VALUES ($1, $2, $3)",
