@@ -1,4 +1,5 @@
 var currentbookname = window.location.pathname.split('/')[3];
+var currentrno = window.location.pathname.split('/')[4];
 
 function loadCommentForm () {
     var commentFormHtml = `
