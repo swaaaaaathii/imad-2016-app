@@ -13,6 +13,7 @@ body {
 }
 
 .img{
+    text-align: right;
     max-width: 400px;
 }
 
