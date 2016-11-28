@@ -1,4 +1,3 @@
-// Eg: coco98.imad.hasura-app.io/articles/article-one will result in article-one
 var currentbookname = window.location.pathname.split('/')[2];
 
 function loadCommentForm () {
@@ -90,7 +89,7 @@ function loadComments () {
         }
     };
     
-    request.open('GET', '/get-comments/' + currentArticleTitle, true);
+    request.open('GET', '/get-comments/' + currentbookname, true);
     request.send(null);
 }
 
