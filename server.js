@@ -273,10 +273,10 @@ app.get('/view-reviews/:bookname/:rno',function(req,res){
    } 
 });
 
-app.get('/get-comments/:articleName', function (req, res) {
+app.get('/get-comments/:bookname', function (req, res) {
    // make a select request
    // return a response with the results
-   pool.query('SELECT comment.*, "user".username FROM article, comment, "user" WHERE article.title = $1 AND article.id = comment.article_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
+   pool.query('SELECT comment.*, "user".username FROM review, comment, "user" WHERE review.book_name = $1 AND review.id = comment.review_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -285,21 +285,21 @@ app.get('/get-comments/:articleName', function (req, res) {
    });
 });
 
-app.post('/submit-comment/:articleName', function (req, res) {
+app.post('/submit-comment/:bookname', function (req, res) {
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
-        pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
+        pool.query('SELECT * from review where title = $1', [req.params.bookname], function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
             } else {
                 if (result.rows.length === 0) {
-                    res.status(400).send('Article not found');
+                    res.status(400).send('Review not found');
                 } else {
-                    var articleId = result.rows[0].id;
+                    var reviewId = result.rows[0].id;
                     // Now insert the right comment for this article
                     pool.query(
-                        "INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",
+                        "INSERT INTO comment (comment, review_id, user_id) VALUES ($1, $2, $3)",
                         [req.body.comment, articleId, req.session.auth.userId],
                         function (err, result) {
                             if (err) {
