@@ -33,7 +33,7 @@ function loadCommentForm () {
         
         // Make the request
         var comment = document.getElementById('comment_text').value;
-        request.open('POST', '/submit-comment/' + currentbookname, true);
+        request.open('POST', '/submit-comment/' + currentbookname + '/' + currentrno, true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({comment: comment}));  
         submit.value = 'Submitting...';
@@ -89,7 +89,7 @@ function loadComments () {
         }
     };
     
-    request.open('GET', '/get-comments/' + currentbookname, true);
+    request.open('GET', '/get-comments/' + currentbookname + '/' + currrentrno,true);
     request.send(null);
 }
 
