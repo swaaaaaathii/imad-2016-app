@@ -43,7 +43,7 @@ function createTemplate (data) {
                 <a href="/logout">Log Out</a>
                 <div>
                     <input type="text" id="bname" placeholder="Search for..."/>
-                    <input type="button" id="search_btn" value="search"/>
+                    <input type="button" id="search_btn" value="Search"/>
                     <script type="text/javascript" src="/ui/search.js"></script>
                 </div>
               </div>
