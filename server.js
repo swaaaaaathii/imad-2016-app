@@ -281,7 +281,7 @@ app.get('/view-reviews/:bookname/:rno',function(req,res){
 });
 
 app.get('/get-comments/:bookname', function (req, res) {
-   pool.query('SELECT comment.*, "user".username FROM review, comment, "user" WHERE review.book_name = $1 AND review.id = comment.review_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.bookname], function (err, result) {
+   pool.query('SELECT comment.*, "user".username FROM review, comment, "user" WHERE lower(review.book_name) = $1 AND review.id = comment.review_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.bookname], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
@@ -291,11 +291,9 @@ app.get('/get-comments/:bookname', function (req, res) {
 });
 
 app.post('/submit-comment/:bookname/:rno', function (req, res) {
-   // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
-        // First check if the article exists and get the article-id
         var rno = req.params.rno;
-        pool.query('SELECT * from review where book_name = $1', [req.params.bookname], function (err, result) {
+        pool.query('SELECT * from review where lower(book_name) = $1', [req.params.bookname], function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
             } else {
