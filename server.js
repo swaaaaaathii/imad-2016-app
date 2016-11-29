@@ -246,6 +246,11 @@ app.get('/view-reviews/:bookname',function (req,res){
            } else {
               var no_of_reviews = result.rows.length-1;
               var bname = req.params.bookname;
+              for(i=0;bname[i]!='/0';i++){
+                  if(bname[i]===' '){
+                      bname[i] = '%20'
+                  }
+              }
               var htmllink = '/view-reviews/'+bname+'/'+no_of_reviews;
               var htmlstring = `<html><body><a href=${htmllink}>View reviews</a></body></html>`
               res.send(htmlstring);  
