@@ -243,6 +243,9 @@ app.get('/view-reviews/:bookname',function (req,res){
            if (err) {
               res.status(500).send(err.toString());
            } else {
+               if(result.rows.length === 0){
+                    alert('No results found');
+               } else {
               var no_of_reviews = result.rows.length-1;
               var bname = req.params.bookname;
               var i;var j;
