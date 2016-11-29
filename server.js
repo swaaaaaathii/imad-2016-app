@@ -273,7 +273,7 @@ app.get('/view-reviews/:bookname/:rno',function(req,res){
    } 
 });
 
-app.get('/get-comments/:bookname/:rno', function (req, res) {
+app.get('/get-comments/:bookname', function (req, res) {
    // make a select request
    // return a response with the results
    pool.query('SELECT comment.*, "user".username FROM review, comment, "user" WHERE review.book_name = $1 AND review.id = comment.review_id AND comment.user_id = "user".id ORDER BY comment.timestamp DESC', [req.params.articleName], function (err, result) {
