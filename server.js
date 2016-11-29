@@ -246,7 +246,9 @@ app.get('/view-reviews/:bookname',function (req,res){
               res.status(500).send(err.toString());
            } else {
                if(result.rows.length === 0){
-                    alert('No results found');
+                    res.send(`<html><body>No results found<br/><br/><button onclick = "goBack()">Go Back</button><script>function goBack() {
+                            window.history.back();
+                        }</script>`)
                } else {
               var no_of_reviews = result.rows.length-1;
               var bname = req.params.bookname;
@@ -268,7 +270,7 @@ app.get('/view-reviews/:bookname/:rno',function(req,res){
        pool.query('SELECT * FROM review WHERE lower(book_name) = $1',[req.params.bookname], function (err, result){
            if (err) {
               res.status(500).send(err.toString());
-           } else {
+           } else { 
               var userdata = result.rows[rno];
               res.send(createViewTemplate(userdata));  
            }
