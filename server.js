@@ -247,10 +247,10 @@ app.get('/view-reviews/:bookname',function (req,res){
               var bname = req.params.bookname;
               var i;var j;
               var res = bname.split(" ");
-              var Bname='';
+              var Bname = '';
               var i;
               for(i=0;i<res.length;i++){
-                  Bname + = res[i] + '%20';
+                  Bname = Bname + res[i] + '%20';
               }
               }
               var htmllink = '/view-reviews/' + bname + '/'+ no_of_reviews;
