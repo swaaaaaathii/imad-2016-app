@@ -106,7 +106,7 @@ function createViewTemplate (data) {
               </h3>
               <div>
                  Book Genre : ${book_genre}
-              <br/><br/><br/>
+              <br/><br/>
                  Review : ${review}
               </div>
               <hr/>
