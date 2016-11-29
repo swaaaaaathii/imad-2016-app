@@ -12,12 +12,7 @@ post.onclick = function(){
         }
     };
 var book_name=document.getElementById('book_name').value;
-var i;
-for(i=0;book_name[i]!='/0';i++){
-    if(book_name[i]===' '){
-        book_name[i] = '-';
-    }
-}
+book_name = book_name.split(' ').join('-');
 var book_genre=document.getElementById('book_genre').value;
 var review=document.getElementById('review').value;
 request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-review',true);
