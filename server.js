@@ -253,7 +253,7 @@ app.get('/view-reviews/:bookname',function (req,res){
               }
               }
               var htmllink = '/view-reviews/' + bname + '/'+ no_of_reviews;
-              var htmlstring = `<html><body><a href=${htmllink}>View reviews</a></body></html>`
+              var htmlstring = `<html><body><a href=${htmllink}>View reviews</a></body></html>`;
               res.send(htmlstring);  
            }
        });
