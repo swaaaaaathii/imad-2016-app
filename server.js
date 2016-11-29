@@ -82,13 +82,13 @@ function createViewTemplate (data) {
     <html>
       <head>
           <title>
-              review
+              Review
           </title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="/ui/style.css" rel="stylesheet" />
       </head> 
       <body>
-          <div class="container">
+          <div class="review">
             <div>
               <button onclick="goBack()">Go Back</button>
                 <script>
@@ -96,10 +96,8 @@ function createViewTemplate (data) {
                     window.history.back();
                 }
                 </script>
-                <div>
                 <input type="button" value="next" id="next"/>
                 <script type="text/javascript" src="/ui/viewresult.js"></script>
-                </div>
             </div>
               <hr/>
               <h3>
