@@ -6,8 +6,10 @@ search.onclick = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status===200){
                 alert('Search Successful');
+                location.href='/view-reviews/'+book_name;
             }else if(request.status===403){
                 alert('No review found');
+                location.href=window.history.back;
             }else if(request.status===500){
                 alert('Something wrong with the server');
             }
@@ -15,7 +17,6 @@ search.onclick = function(){
     };
 var book_name=document.getElementById('bname').value;
 book_name = book_name.split(" ").join("-").toLowerCase();
-location.href='/view-reviews/'+book_name;
 };
 
 
