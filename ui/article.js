@@ -34,6 +34,8 @@ function loadCommentForm () {
         
         // Make the request
         var comment = document.getElementById('comment_text').value;
+        console.log(currentbookname);
+        console.log(currentrno);
         request.open('POST', '/submit-comment/' + currentbookname + '/' + currentrno, true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({comment: comment}));  
