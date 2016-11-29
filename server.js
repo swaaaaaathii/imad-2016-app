@@ -45,7 +45,7 @@ function createTemplate (data) {
                     <input type="text" id="bname" placeholder="Search for..."/>
                     <input type="button" id="search_btn" value="search"/>
                     <script type="text/javascript" src="/ui/search.js"></script>
-                    </div>
+                </div>
               </div>
               <br/><br/>
               <br/><br/>
