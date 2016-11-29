@@ -246,6 +246,7 @@ app.get('/view-reviews/:bookname',function (req,res){
            } else {
               var no_of_reviews = result.rows.length-1;
               var bname = req.params.bookname;
+              var i;
               for(i=0;bname[i]!='/0';i++){
                   if(bname[i]===' '){
                       bname[i] = '%20'
