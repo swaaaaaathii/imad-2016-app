@@ -17,10 +17,8 @@ function loadCommentForm () {
         // Create a request object
         var request = new XMLHttpRequest();
         
-        // Capture the response and store it in a variable
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
-                // Take some action
                 if (request.status === 200) {
                     // clear the form & reload all the comments
                     document.getElementById('comment_text').value = '';
@@ -32,10 +30,7 @@ function loadCommentForm () {
           }
         };
         
-        // Make the request
         var comment = document.getElementById('comment_text').value;
-        console.log(currentbookname);
-        console.log(currentrno);
         request.open('POST', '/submit-comment/' + currentbookname + '/' + currentrno, true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({comment: comment}));  
@@ -45,7 +40,6 @@ function loadCommentForm () {
 }
 
 function loadLogin () {
-    // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
