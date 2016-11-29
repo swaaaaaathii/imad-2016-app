@@ -295,9 +295,9 @@ app.post('/submit-comment/:bookname/:rno', function (req, res) {
                 res.status(500).send(err.toString());
             } else {
                 if (result.rows.length === 0) {
-                    res.status(400).send('Review not found');
+                    res.status(401).send('Review not found');
                 } else {
-                    var r_no = result.rows.length-rno-1;
+                    var r_no = result.rows.length - rno - 1;
                     var reviewId = result.rows[r_no].id;
                     // Now insert the right comment for this article
                     pool.query(
