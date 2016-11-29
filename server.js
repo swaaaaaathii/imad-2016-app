@@ -96,7 +96,7 @@ function createViewTemplate (data) {
                     window.history.back();
                 }
                 </script>
-                <input type="button" value="next" id="next"/>
+                <input type="button" value="Next" id="next"/>
                 <script type="text/javascript" src="/ui/viewresult.js"></script>
             </div>
               <hr/>
@@ -104,10 +104,9 @@ function createViewTemplate (data) {
                   ${book_name}
               </h3>
               <div>
-                 Book genre : ${book_genre}
-              </div>
-              <div>
-                REVIEW : ${review}
+                 Book Genre : ${book_genre}
+              <br/><br/><br/>
+                 Review : ${review}
               </div>
               <hr/>
               <h4>Comments</h4>
