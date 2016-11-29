@@ -259,6 +259,7 @@ app.get('/view-reviews/:bookname',function (req,res){
               var htmlstring = `<html><body><a href=${htmllink}>View reviews</a></body></html>`;
               res.send(htmlstring);  
            }
+         }
        });
    } else {
        res.status(400).send('<html><body>You are not logged in<br/><br/><a href="/">Login</a></body></html>');
