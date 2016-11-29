@@ -299,7 +299,6 @@ app.post('/submit-comment/:bookname/:rno', function (req, res) {
                 } else {
                     var r_no = result.rows.length - rno - 1;
                     var reviewId = result.rows[r_no].id;
-                    // Now insert the right comment for this article
                     pool.query(
                         "INSERT INTO comment (comment, review_id, user_id) VALUES ($1, $2, $3)",
                         [req.body.comment, reviewId, req.session.auth.userId],
