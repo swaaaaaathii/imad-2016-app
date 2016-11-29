@@ -89,6 +89,7 @@ function createViewTemplate (data) {
       </head> 
       <body>
           <div class="container">
+            <div>
               <button onclick="goBack()">Go Back</button>
                 <script>
                 function goBack() {
@@ -99,6 +100,7 @@ function createViewTemplate (data) {
                 <input type="button" value="next" id="next"/>
                 <script type="text/javascript" src="/ui/viewresult.js"></script>
                 </div>
+            </div>
               <hr/>
               <h3>
                   ${book_name}
