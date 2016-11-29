@@ -90,7 +90,7 @@ function loadComments () {
         }
     };
     
-    request.open('GET', '/get-comments/' + currentbookname + '/' + currrentrno,true);
+    request.open('GET', '/get-comments/' + currentbookname ,true);
     request.send(null);
 }
 
