@@ -252,7 +252,7 @@ app.get('/view-reviews/:bookname',function (req,res){
               for(i=0;i<res.length;i++){
                   Bname = Bname + res[i] + '%20';
               }
-              var htmllink = '/view-reviews/' + bname + '/'+ no_of_reviews;
+              var htmllink = '/view-reviews/' + Bname + '/'+ no_of_reviews;
               var htmlstring = `<html><body><a href=${htmllink}>View reviews</a></body></html>`;
               res.send(htmlstring);  
            }
