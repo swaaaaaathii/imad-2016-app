@@ -75,6 +75,7 @@ function createTemplate (data) {
 
 function createViewTemplate (data) {
     var book_name = data.book_name;
+    book_name = book_name.split('-').join(' ');
     var book_genre = data.book_genre;
     var review = data.book_review;
     
