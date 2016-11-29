@@ -55,7 +55,7 @@ function createTemplate (data) {
                   Name : 
                   ${name}
                   <br/><br/><br/>
-                  Birthday : 
+                  Birthday (eg : 01-Jan-2000) : 
                   ${date.toDateString()}
                   <br/><br/><br/>
                   Contact Number : 
