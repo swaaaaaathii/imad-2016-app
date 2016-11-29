@@ -41,7 +41,7 @@ function createTemplate (data) {
               <div align = "center">
                 <a href="/review">Write a review</a>
                 <a href="/logout">Log Out</a>
-                <div>
+                <div><br/><br/>
                     <input type="text" id="bname" placeholder="Search for..."/>
                     <input type="button" id="search_btn" value="Search"/>
                     <script type="text/javascript" src="/ui/search.js"></script>
