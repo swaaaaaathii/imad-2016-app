@@ -6,6 +6,7 @@ submit.onclick = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status===200){
                 alert('User created successfully');
+                location.href = '/';
             }else if(request.status===403){
                 alert('User not created. Re-try');
             }else if(request.status===500){
@@ -22,5 +23,4 @@ var email=document.getElementById('email').value;
 request.open('POST','http://swaaaaaathii.imad.hasura-app.io/create-user',true);
 request.setRequestHeader('Content-Type', 'application/json');
 request.send(JSON.stringify({username: username, password: password, name: name, date: date, phno: phno, email: email}));
-location.href = '/';
 };
